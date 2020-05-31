@@ -9,14 +9,14 @@
 
 <body>
 
-    <form action="certi.html" method="GET">
+    <form action="certi.html" method="GET" enctype="multipart/form-data">
 
         <span>Name</span>
         <br>
         <input type="text" name="name" id="name">
         <br>
         <span>Your image</span>
-        <input type="file" name="image" id="image">
+        <input type="file" accept="image/*" name="image" id="image" webkitdirectory>
 
         <button type="submit" id="submitbtn">Submit</button>
     </form>
