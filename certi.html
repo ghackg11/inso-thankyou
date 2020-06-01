@@ -6,9 +6,7 @@
         Document
     </title>
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
-    </script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://files.codepedia.info/files/uploads/iScripts/html2canvas.js">
     </script>
     <style>
@@ -21,39 +19,66 @@
             transform: translate(-50%, -50%);
         }
         
-        #person {
+        #myImg {
             position: absolute;
             width: 18vw;
             height: 26vw;
             top: 20vw;
             left: 10vw;
+            visibility: hidden;
             border: 2px solid black;
         }
+        
+        #inputfile {
+            position: absolute;
+            top: 20vw;
+            left: 10vw;
+        }
     </style>
+
 </head>
 
 <body>
     <center>
 
 
-        <div id="html-content-holder" style="width: 90%;height: 90%;">
+        <div class="container">
+            <div id="html-content-holder" style="width: 90%;height: 90%;">
 
-            <span id="name"></span>
-            <div id="imagesec">
-                <img src="person.jpeg" alt="person" id="person">
+                <span id="name"></span>
+                <div id="imagesec">
+                    <input type='file' id="inputfile" />
+                    <img id="myImg" src="#" alt="your image" />
+                </div>
+                <img src="certi.png" alt="img" style="width: 100%; height: 100%;">
             </div>
-            <img src="certi.png" alt="img" style="width: 100%; height: 100%;">
+
+            <input id="btn-Preview-Image" type="button" value="Generate Certificate" />
+
+            <a id="btn-Convert-Html2Image" href="#">Download</a>
+
+            <br/>
+
+            <div id="previewImage" style="visibility: hidden;"></div>
         </div>
-
-        <input id="btn-Preview-Image" type="button" value="Generate Certificate" />
-
-        <a id="btn-Convert-Html2Image" href="#">Download</a>
-
-        <br/>
-
-        <div id="previewImage" style="visibility: hidden;"></div>
-
         <script>
+            $(function() {
+                $(":file").change(function() {
+                    if (this.files && this.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = imageIsLoaded;
+                        reader.readAsDataURL(this.files[0]);
+                    }
+                });
+            });
+
+            function imageIsLoaded(e) {
+                $('#myImg').attr('src', e.target.result);
+                document.getElementById('myImg').style.visibility = "visible";
+            };
+
+
+
             $(document).ready(function() {
 
                 // Global variable 
@@ -69,17 +94,6 @@
                             getCanvas = canvas;
                         }
                     });
-
-                    var imgageData =
-                        getcanvas.toDataURL("image/png");
-
-
-                    var newData = imgageData.replace(
-                        /^data:image\/png/, "data:application/octet-stream");
-
-                    $("#btn-Convert-Html2Image").attr(
-                        "download", "GeeksForGeeks.png").attr(
-                        "href", newData);
 
                 });
 
