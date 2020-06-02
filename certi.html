@@ -18,6 +18,9 @@
             font-family: 'Satisfy', cursive;
             font-size: 3vw;
             transform: translate(-50%, -50%);
+            background-color: transparent;
+            border: none;
+            text-align: center;
         }
         
         #myImg {
@@ -84,14 +87,14 @@
         <div class="container">
             <div id="html-content-holder" style="width: 90%;height: 90%;">
 
-                <span id="name"></span>
+                <input id="name" placeholder="Enter your name here"></input>
                 <div id="imagesec">
                     <span id="span">Please Upload your Image here:</span>
                     <input type='file' id="inputfile" />
                     <img id="myImg" src="#" alt="your image" />
                 </div>
-                <img src="certi.png" alt="img" style="width: 100%; height: 100%; margin-bottom: 10px; margin-top: 10px;">
-                <p id="msg" style="display: none;">The Certificate is generated successfully, you can now Download it! </p>
+                <img src="certi.png" alt="img" style="width: 100%; height: 100%; margin-bottom: 10px; margin-top: 10px; border: 3px solid green;">
+                <p id="msg" style="display: none;">The Certificate is generated successfully,you can now Download it! </p>
             </div>
 
             <input id="btn-Preview-Image" type="button" value="Generate Certificate" class="btn" />
