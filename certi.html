@@ -9,10 +9,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://files.codepedia.info/files/uploads/iScripts/html2canvas.js">
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
     <style>
         #name {
             position: absolute;
-            top: 20vw;
+            top: 21vw;
             left: 50%;
             font-family: 'Satisfy', cursive;
             font-size: 3vw;
@@ -35,16 +36,46 @@
             left: 10vw;
         }
         
+        #span {
+            position: absolute;
+            top: 17vw;
+            left: 10vw;
+            font-family: 'Titillium Web', sans-serif;
+            font-size: 2vw;
+        }
+        
         .container {
             position: absolute;
             top: 20vh;
-            border: 4px solid black;
+            border: 4px solid green;
             padding: 10px;
-            box-shadow: 5px 5px 10px black;
+            margin: 10px;
+            box-shadow: 10px 10px 10px green;
+        }
+        
+        .btn {
+            background-color: white;
+            border: 3px solid green;
+            border-radius: 5px;
+            width: fit-content;
+            height: 2.5vw;
+            margin: 10px;
+        }
+        
+        #btn-Convert-Html2Image {
+            color: white;
+            background-color: green;
+            border: 3px solid green;
+            border-radius: 5px;
+            height: 2.5vw;
+            padding: 10px;
+            text-decoration: none;
+            margin: 10px;
         }
     </style>
 
 </head>
+
 
 <body>
     <center>
@@ -55,13 +86,14 @@
 
                 <span id="name"></span>
                 <div id="imagesec">
+                    <span id="span">Please Upload your Image here:</span>
                     <input type='file' id="inputfile" />
                     <img id="myImg" src="#" alt="your image" />
                 </div>
                 <img src="certi.png" alt="img" style="width: 100%; height: 100%; margin-bottom: 10px; margin-top: 10px;">
             </div>
 
-            <input id="btn-Preview-Image" type="button" value="Generate Certificate" />
+            <input id="btn-Preview-Image" type="button" value="Generate Certificate" class="btn" />
 
             <a id="btn-Convert-Html2Image" href="#">Download</a>
 
@@ -84,6 +116,7 @@
                 $('#myImg').attr('src', e.target.result);
                 document.getElementById('myImg').style.visibility = "visible";
                 document.getElementById('inputfile').style.visibility = "hidden";
+                document.getElementById('span').style.visibility = "hidden";
             };
 
 
