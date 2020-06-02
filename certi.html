@@ -25,7 +25,7 @@
         
         #myImg {
             position: absolute;
-            width: 18vw;
+            width: 19vw;
             height: 26vw;
             top: 20vw;
             left: 10vw;
@@ -70,14 +70,15 @@
             border: 3px solid green;
             border-radius: 5px;
             height: 2.5vw;
+            width: fit-content;
             padding: 10px;
             text-decoration: none;
             margin: 10px;
+            display: none;
         }
         
         #vido {
             position: relative;
-            
             width: 100%;
         }
         
@@ -109,7 +110,7 @@
 
             <input id="btn-Preview-Image" type="button" value="Generate Certificate" class="btn" />
 
-            <a id="btn-Convert-Html2Image" href="#">Download</a>
+            <a id="btn-Convert-Html2Image" class="downloadl" href="#">Download</a>
 
             <br/>
 
@@ -150,6 +151,7 @@
                             $("#previewImage").append(canvas);
                             getCanvas = canvas;
                             document.getElementById('msg').style.display = "block";
+                            document.getElementById('btn-Convert-Html2Image').style.display = "block";
                         }
                     });
 
