@@ -5,6 +5,7 @@
     <title>
         Document
     </title>
+    <link href="https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://files.codepedia.info/files/uploads/iScripts/html2canvas.js">
@@ -15,8 +16,10 @@
             position: absolute;
             top: 21vw;
             left: 50%;
-            font-family: 'Satisfy', cursive;
-            font-size: 3vw;
+            font-family: 'Tenali Ramakrishna', sans-serif;
+            font-weight: bold;
+            color: purple;
+            font-size: 3.5vw;
             transform: translate(-50%, -50%);
             background-color: transparent;
             border: none;
@@ -91,7 +94,7 @@
 </head>
 
 
-<body onload="playVideo()">
+<body onload="playVideo()" id="body">
     <center>
 
         <img src="top.jpeg" alt="top" id="top">
@@ -135,8 +138,11 @@
                 document.getElementById('span').style.visibility = "hidden";
             };
 
+            document.getElementById('body').addEventListener('click', playVideo());
+
             function playVideo() {
-                document.getElementById('vido').play();
+                if (!document.getElementById('vido').playing)
+                    document.getElementById('vido').play();
             }
             $(document).ready(function() {
 
