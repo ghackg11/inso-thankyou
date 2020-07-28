@@ -89,12 +89,17 @@
             width: 100%;
             position: relative;
         }
+        
+        #imgni {
+            position: relative;
+            width: 100%;
+        }
     </style>
 
 </head>
 
 
-<body onload="playVideo()" id="body">
+<body id="body">
     <center>
 
         <img src="top.jpeg" alt="top" id="top">
@@ -119,7 +124,9 @@
 
             <div id="previewImage" style="display:none"></div>
         </div>
-        <video src="neeche.mp4" controls id="vido"></video>
+        <!-- <video src="neeche.mp4" controls id="vido"></video> -->
+        <img src="certineeche.jpeg" alt="" id="imgni">
+        <img src="sabseneeche.jpeg" alt="" id="imgni">
         <script>
             $(function() {
                 $(":file").change(function() {
